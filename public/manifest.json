@@ -1,6 +1,6 @@
 {
-  "short_name": "FX Frontend",
-  "name": "Foreign Exchange Frontend App",
+  "short_name": "FX App",
+  "name": "Foreign Exchange App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,9 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/frontend/",
+  "start_url": "./",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "scope": "/frontend/"
+  "background_color": "#ffffff"
 }
