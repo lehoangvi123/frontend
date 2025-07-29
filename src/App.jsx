@@ -148,7 +148,7 @@ const UserInfoButton = ({ user, onLogout }) => {
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c...z" />
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
-  <span>Setting</span>
+  <span>Cài đặt</span>
 </Link>
 
 
