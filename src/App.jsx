@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import axios from 'axios';
+import { ThemeProvider } from './contexts/themeContexts';
+import { BrowserRouter  } from 'react-router-dom';
 
 // Pages 
 import Home from './pages/Home'
@@ -393,7 +395,12 @@ function App() {
           border-radius: 16px;
           border: 1px solid rgba(255, 255, 255, 0.15);
           padding: 0.5rem;
-        }
+        } 
+
+        /* Trong CSS */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
 
         .nav-item {
           position: relative;
@@ -570,18 +577,7 @@ function App() {
           position: relative;
         }
 
-        .user-avatar::after {
-          content: '';
-          position: absolute;
-          bottom: -2px;
-          right: -2px;
-          width: 12px;
-          height: 12px;
-          background: #10b981;
-          border-radius: 50%;
-          border: 2px solid white;
-          animation: pulse 2s infinite;
-        }
+        
 
         @keyframes pulse {
           0%, 100% { opacity: 1; transform: scale(1); }
@@ -764,6 +760,7 @@ function App() {
 
         {/* MAIN WITH PROPER PADDING */} 
         <main className="container mx-auto flex-1 p-6" style={mainStyles}>
+          <ThemeProvider>
           <Routes>
             <Route path="/" element={
               rate && Object.keys(rate).length > 0 ? (
@@ -810,7 +807,8 @@ function App() {
             <Route path="/rates" element={<Rates />} />  
             <Route path="/SaveForm" element={<SaveForm />} /> 
             <Route path="/converter" element={<Converter />} />
-          </Routes>
+          </Routes> 
+          </ThemeProvider>
         </main>
 
         {/* SCROLL TO TOP BUTTON */}
@@ -858,31 +856,31 @@ function App() {
             </div>
             <div className="pro-footer-links">
               <div>
-                <h4>Company</h4>
-                <a href="/about">About Us</a>
-                <a href="/careers">Careers</a>
-                <a href="/contact">Contact</a>
-                <a href="/press">Press</a>
+                <h4>Công ty</h4>
+                <a href="/about">Về chúng tôi</a>
+                <a href="/careers">Sự nghiệp</a>
+                <a href="/contact">Liên hệ với chúng tôi</a>
+                <a href="https://vietstock.vn/">Điểm nhấn</a>
               </div>
               <div>
-                <h4>Resources</h4>
-                <a href="https://www.postman.com/api-platform/api-documentation/">API Documentation</a>
-                <a href="https://forextaker.com/understanding-exchange-rates-a-comprehensive-guide/">Help Guide</a>
+                <h4>Tài nguyên</h4>
+                <a href="https://www.postman.com/api-platform/api-documentation/">Tài liệu về API</a>
+                <a href="https://forextaker.com/understanding-exchange-rates-a-comprehensive-guide/">Hướng dẫn</a>
                 <a href="https://acemoneytransfer.com/blog/exchange-rates-101-get-answers-to-10-common-questions">FAQ</a>
                 <a href="https://ebury.com/e-blog/blog/ebury_post/fx-101-understanding-exchange-rate-regimes/">Blog</a>
               </div>
               <div>
-                <h4>Support</h4>
-                <a href="https://help.xe.com/hc/en-gb">Help Center</a>
-                <a href="https://support.microsoft.com/en-us/contactus">Contact Support</a>
-                <a href="https://clickup.com/blog/how-to-write-a-bug-report/">Report Issue</a>
-                <a href="https://portal.office.com/servicestatus/">Service Status</a>
+                <h4>Hỗ trợ</h4>
+                <a href="https://help.xe.com/hc/en-gb">Trung tâm hỗ trợ</a>
+                <a href="https://support.microsoft.com/en-us/contactus">Trợ giúp và liên hệ</a>
+                <a href="https://clickup.com/blog/how-to-write-a-bug-report/">Báo cáo vấn đề</a>
+                <a href="https://portal.office.com/servicestatus/">Dịch vụ của chúng tôi</a>
               </div>
               <div>
-                <h4>Legal</h4>
-                <a href="https://www.termsfeed.com/live/159dd57d-3d00-4060-b937-2c50e86903f9">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/disclaimer">Disclaimer</a>
+                <h4>Luật lệ</h4>
+                <a href="https://www.termsfeed.com/live/159dd57d-3d00-4060-b937-2c50e86903f9">Quyền riêng tư</a>
+                <a href="/terms">Điều khoản về dịch vụ</a>
+                <a href="/disclaimer">Tuyên bố miễn trừ trách nhiệm</a>
               </div>
             </div>
           </div>
