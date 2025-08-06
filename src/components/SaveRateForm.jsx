@@ -117,6 +117,7 @@ const SaveRateForm = () => {
     setLoading(true);
     
     try {
+
       // Prepare data
       const rateData = {};
       rates.forEach(rate => {
@@ -125,6 +126,7 @@ const SaveRateForm = () => {
 
       // Save to API
       const response = await fetch('http://localhost:5000/api/rates/save', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

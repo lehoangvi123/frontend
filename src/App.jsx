@@ -37,7 +37,9 @@ import Terms from './pages/Terms';
 import Disclaimer from './pages/Disclamer'; 
 import ThemeToggle from './components/ThemeToggle'; 
 import Analytics from './pages/Analytics'; 
-import Report from './pages/Report' 
+import Report from './pages/Report'; 
+import Export from './pages/Export'; 
+import APIIntegration from './pages/APIintegration';
 
 import './css/theme.css'
 import './App.css';
@@ -141,6 +143,7 @@ const UserInfoButton = ({ user, onLogout }) => {
               <span>Thông tin cá nhân</span>
             </Link>
 
+
             <Link to="/setting" onClick={() => setIsDropdownOpen(false)} 
                   className="user-dropdown-item"
                   style={{
@@ -153,6 +156,7 @@ const UserInfoButton = ({ user, onLogout }) => {
               </svg>
               <span>Cài đặt</span>
             </Link>
+
 
             <button onClick={handleLogout} 
                     className="user-dropdown-item logout-item"
@@ -955,6 +959,8 @@ function AppContent() {
 
                     <div><Analytics /></div> 
                     <div> <Report /> </div>
+                    <div><Export /></div> 
+                    <div><APIIntegration /></div>
                   </div>
                 </div>
               ) : (
@@ -981,7 +987,9 @@ function AppContent() {
             <Route path="/SaveForm" element={<SaveForm />} /> 
             <Route path="/converter" element={<Converter />} />
             <Route path="/analytics" element={<Analytics />} /> 
-            <Route path="/reports" element={<Report />} />
+            <Route path="/reports" element={<Report />} /> 
+            <Route path="/export" element={<Export />} /> 
+            <Route path="/api" element={<APIIntegration />} />
           </Routes> 
         </main>
 

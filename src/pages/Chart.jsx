@@ -29,7 +29,7 @@ export default function RateChart() {
     fetchRealRates();
     
     // Fetch mỗi 60 giây (API này update mỗi ngày, nhưng ta fetch thường xuyên để demo)
-    intervalRef.current = setInterval(fetchRealRates, 60000);
+    intervalRef.current = setInterval(fetchRealRates, 10000);
   };
 
   const stopTracking = () => {
