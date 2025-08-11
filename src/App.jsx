@@ -939,6 +939,9 @@ if (!isAuthenticated) {
           </Routes> 
         </main>
 
+        {/* This is the comment
+         */}
+
         {/* SCROLL TO TOP BUTTON */}
         {!isHeaderVisible && (
           <button
