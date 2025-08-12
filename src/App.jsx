@@ -44,7 +44,7 @@ import APIIntegration from './pages/APIintegration';
 import './css/theme.css'
 import './App.css';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'https://backend-1-8b9z.onrender.com/';
 
 // User Info Button Component
 const UserInfoButton = ({ user, onLogout }) => {
@@ -464,9 +464,7 @@ if (!isAuthenticated) {
   const mainStyles = {
     paddingTop: '6rem',
     minHeight: 'calc(100vh - 6rem)',
-    background: isDark 
-      ? 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)' 
-      : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    
     transition: 'all 0.3s ease'
   };
 
