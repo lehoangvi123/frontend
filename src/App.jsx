@@ -245,7 +245,7 @@ const NavigationMenu = () => {
       {navigationItems.map((item, index) => (
         <div 
           key={index}
-          className="nav-item"
+          className="nav-item"    
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >
@@ -898,7 +898,7 @@ if (!isAuthenticated) {
                     
                     {/* <div ><UpdateUserForm /></div> */}
                     
-                    <div ><UpdatePreferences /></div>
+                    {/* <div ><UpdatePreferences /></div> */}
                     
                     <div ><ArchiveRateForm /></div> 
                     
@@ -1046,9 +1046,10 @@ if (!isAuthenticated) {
         
         /* Header container adjustments */
         .container {
-          max-width: none !important;
-          width: 100% !important;
-        }
+  max-width: none !important;
+  width: 100% !important;   
+  background-color: #1e3a8a; /* Xanh navy đậm */
+}
         
         /* Logo hover effect */
         .flex.items-center.space-x-2:hover {
